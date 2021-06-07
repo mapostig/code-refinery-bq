@@ -10,3 +10,6 @@ def newFunction(a,b):
 def niceTop():
   val = input('Whats the color?')
   return val 
+
+def weAreDoingTheSame(a,b):
+  return a+b 
