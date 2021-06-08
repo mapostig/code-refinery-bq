@@ -1,4 +1,5 @@
 import pytest
+from temperature import fahrenheit_to_celsius
 
 def test_fahrenheit_to_celsius():
     temp_c = fahrenheit_to_celsius(temp_f = 100)
