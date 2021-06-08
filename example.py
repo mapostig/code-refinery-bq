@@ -6,7 +6,7 @@ def add(a, b):
 
 def test_add():
     assert pytest.approx(add(0.1, 0.2), 0.3)
-    
+# -----------------------------------------------------------------------------------------   
 #1
 def factorial(n):
     """
@@ -20,6 +20,25 @@ def factorial(n):
     return result
 
 
+def test_negative_factorial(n):
+    """
+    test n < 0
+    """
+    n = -1
+    result = factorial(n)
+    with pytest.raises(ValueError):
+    assert pytest.approx(1, result)
+    
+def test_positive_factorial(n):
+    """
+    test positive factorial
+    """
+    n = 5
+    result = factorial(n)
+    expected_result = 120
+    
+    assert result == expected_result
+# -----------------------------------------------------------------------------------------   
 # 2
 def count_word_occurrence_in_string(text, word):
     """
