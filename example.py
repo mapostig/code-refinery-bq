@@ -48,7 +48,21 @@ def count_word_occurrence_in_string(text, word):
     words = text.split()
     return words.count(word)
 
+def test_count_word_occurrence_in_string():
+    text = "apple juice orange juice or lemon juicy juice"
+    word = "juice"
+    expected_result = 3
+    result = count_word_occurrence_in_string(text, word)
+    assert result == expected_result
+    
 
+def test_empty_count_word_occurrence_in_string():
+    text = ""
+    word = "juice"
+    expected_result = 0
+    result = count_word_occurrence_in_string(text, word)
+    assert result == expected_result
+    
 # 3
 # Hint look at python tempfile module, specifically mkstemp
 def count_word_occurrence_in_file(file_name, word):
@@ -63,7 +77,6 @@ def count_word_occurrence_in_file(file_name, word):
             words = line.split()
             count += words.count(word)
     return count
-
 
 # 4
 # Hint look at monkeypatching for functions
