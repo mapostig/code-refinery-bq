@@ -8,15 +8,15 @@ def test_add():
     assert pytest.approx(add(0.1, 0.2), 0.3)
 # -----------------------------------------------------------------------------------------   
 #1
-def factorial(n):
-    """
-    Computes the factorial of n.
-    """
+    def factorial(n):
+        """
+        Computes the factorial of n.
+        """
     if n < 0:
-        raise ValueError('received negative input')
+       raise ValueError('received negative input')
     result = 1
     for i in range(1, n + 1):
-        result *= i
+       result *= i
     return result
 
 
