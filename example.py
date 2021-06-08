@@ -8,28 +8,27 @@ def test_add():
     assert pytest.approx(add(0.1, 0.2), 0.3)
 # -----------------------------------------------------------------------------------------   
 #1
-    def factorial(n):
-        """
-        Computes the factorial of n.
-        """
-    if n < 0:
-       raise ValueError('received negative input')
-    result = 1
-    for i in range(1, n + 1):
-       result *= i
-    return result
+def factorial(n):
+    """
+    Computes the factorial of n.
+    """
+if n < 0:
+   raise ValueError('received negative input')
+result = 1
+for i in range(1, n + 1):
+   result *= i
+return result
 
 
-def test_negative_factorial(n):
+def test_negative_factorial():
     """
     test n < 0
     """
     n = -1
-    result = factorial(n)
     with pytest.raises(ValueError):
-    assert pytest.approx(1, result)
+        result = factorial(n)
     
-def test_positive_factorial(n):
+def test_positive_factorial():
     """
     test positive factorial
     """
