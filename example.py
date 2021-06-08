@@ -80,7 +80,7 @@ def count_word_occurrence_in_file(file_name, word):
 
 def test_count_word_occurrence_in_file():
     
-    filename = "file_for_test.txt"
+    file_name = "file_for_test.txt"
     result = count_word_occurrence_in_file(file_name, "juice")
     expected_result = 3
     assert result == expected_result
