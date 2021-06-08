@@ -102,10 +102,10 @@ def test_negative_check_time_to_now_even():
     with pytest.raises(ValueError):
         secs = check_time_to_now_even(-1)
         
-def test_even_check_time_to_now_even(seconds):
+def test_even_check_time_to_now_even():
     assert check_time_to_now_even(8) == 0
     
-def test_odd_check_time_to_now_even(seconds):
+def test_odd_check_time_to_now_even():
     assert check_time_to_now_even(9) != 0
     
 # -----------------------------------------------------------------------------------------   
