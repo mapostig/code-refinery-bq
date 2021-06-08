@@ -62,7 +62,7 @@ def test_empty_count_word_occurrence_in_string():
     expected_result = 0
     result = count_word_occurrence_in_string(text, word)
     assert result == expected_result
-    
+# -----------------------------------------------------------------------------------------       
 # 3
 # Hint look at python tempfile module, specifically mkstemp
 def count_word_occurrence_in_file(file_name, word):
@@ -78,6 +78,13 @@ def count_word_occurrence_in_file(file_name, word):
             count += words.count(word)
     return count
 
+def test_count_word_occurrence_in_file():
+    
+    filename = "file_for_test.txt"
+    result = count_word_occurrence_in_file(file_name, "juice")
+    expected_result = 3
+    assert result == expected_result
+# -----------------------------------------------------------------------------------------   
 # 4
 # Hint look at monkeypatching for functions
 import time
@@ -91,7 +98,17 @@ def check_time_to_now_even(seconds):
     now=time.time()
     return (seconds-now)%2 == 0
 
-
+def test_negative_check_time_to_now_even():
+    with pytest.raises(ValueError):
+        secs = check_time_to_now_even(-1)
+        
+def test_even_check_time_to_now_even(seconds):
+    assert check_time_to_now_even(8) == 0
+    
+def test_odd_check_time_to_now_even(seconds):
+    assert check_time_to_now_even(9) != 0
+    
+# -----------------------------------------------------------------------------------------   
 # 5
 class Pet:
     def __init__(self, name):
