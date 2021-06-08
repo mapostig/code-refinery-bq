@@ -11,4 +11,4 @@ def add(a, b):
 
 
 def test_add():
-    assert add(0.1, 0.2) == 0.3
+    assert pytest.approx(add(0.1, 0.2), 0.3)
